@@ -11,6 +11,7 @@ title: bus-alert
   <script type="text/javascript" src="https://pubnub.github.io/eon/v/eon/1.0.0/eon.js"></script>
   <link type="text/css" rel="stylesheet" href="https://pubnub.github.io/eon/v/eon/1.0.0/eon.css"/>
   <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
+  <link rel="stylesheet" href="css/main.css" type="text/css">
   <style>
   /*#map {*/
   /*  position:absolute;*/
@@ -23,18 +24,56 @@ title: bus-alert
 </head>
 
 <body>
-  <div class="dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    Dropdown
+  <div class="logo">
+    <img src="images/VIAlogo425_225x129.jpg" class="img-rounded" alt="Via Logo" width="100" height="50">
+  </div>
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-xs-4">
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Routes
     <span class="caret"></span>
   </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-      <li><a href="#">Action</a></li>
-      <li><a href="#">Another action</a></li>
-      <li><a href="#">Something else here</a></li>
-      <li role="separator" class="divider"></li>
-      <li><a href="#">Separated link</a></li>
-    </ul>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a href="#">Route 1</a></li>
+            <li><a href="#">Route 2</a></li>
+            <li><a href="#">Route 3</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">More routes</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-xs-4">
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Direction
+    <span class="caret"></span>
+  </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li><a href="#">Inbound</a></li>
+              <li><a href="#">Outbound</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Stop
+    <span class="caret"></span>
+  </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="#">Inbound</a></li>
+                <li><a href="#">Outbound</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
