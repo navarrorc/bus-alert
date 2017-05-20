@@ -1,1 +1,55 @@
 /* CSS Styles are defined below */
+/**
+ 
+ 
+ 
+ 
+ * Media Queries
+ * see: http://getbootstrap.com/css/#grid-options
+ **/
+@media screen and (min-width: 320px) {
+    body::before {
+        content: "320px [col-xs]";
+        font-family: Arial, sans-serif;
+        color: green;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        font-weight: 700;
+        font-size: 1.5rem; /* 13px */
+        z-index: 9999;
+    }
+
+}
+
+@media screen and (min-width: 640px) {
+    body::before {
+        content: "640px [col-xs]";
+        color: red;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    body::before {
+        content: "768px [col-sm]";
+        color: orange;
+    }
+
+
+}
+
+@media screen and (min-width: 992px) {
+    body::before {
+        content: "992px [col-md]";
+        color: black;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+    body::before {
+        content: "1200px [col-lg]";
+        color: red;
+    }
+
+}
