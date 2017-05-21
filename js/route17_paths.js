@@ -1,4 +1,4 @@
-window.paths = {
+window.route17_paths = {
     "type": "FeatureCollection",
     "features": [{
         "type": "Feature",

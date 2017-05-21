@@ -6,80 +6,85 @@ title: bus-alert
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
   <script type="text/javascript" src="https://pubnub.github.io/eon/v/eon/1.0.0/eon.js"></script>
-  <link type="text/css" rel="stylesheet" href="https://pubnub.github.io/eon/v/eon/1.0.0/eon.css"/>
+  <link type="text/css" rel="stylesheet" href="https://pubnub.github.io/eon/v/eon/1.0.0/eon.css" />
   <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
-  <link rel="stylesheet" href="css/main.css" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="{{ site.github.url }}/css/main.css" type="text/css">
   <style>
-  /*#map {*/
-  /*  position:absolute;*/
-  /*  top:0;*/
-  /*  bottom:0;*/
-  /*  width:100%;*/
-  /*  background: red;*/
-  /*}*/
+    #map {
+      /*position:absolute;*/
+      /*top:400px;*/
+      /*bottom:0;*/
+      margin-top: 50px;
+      height: 80vh;
+      width:100%;
+      /*background: red;*/
+    }
   </style>
+  <script type="text/javascript" src="{{ site.github.url }}/js/transit_routes.js"></script>
+  <script type="text/javascript" src="{{ site.github.url }}/js/route17_paths.js"></script>
+  <script type="text/javascript" src="{{ site.github.url }}/js/route2_paths.js"></script>
+  
 </head>
 
 <body>
   <div class="logo">
-    <img src="images/VIAlogo425_225x129.jpg" class="img-rounded" alt="Via Logo" width="100" height="50">
+    <img src="images/VIA_ALERT_LOGO_225x129.jpg" class="img-rounded" alt="Via Logo" width="100" height="50">
+
+    <a href="#"><img :hover class="bell-notify" src="images/bell_notify.png" alt="picture of bell"></a>
   </div>
+  
+  
+  
   <div class="container-fluid">
 
-    <div class="row">
-      <div class="col-xs-4">
-        <div class="dropdown">
-          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    Routes
-    <span class="caret"></span>
-  </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><a href="#">Route 1</a></li>
-            <li><a href="#">Route 2</a></li>
-            <li><a href="#">Route 3</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">More routes</a></li>
-          </ul>
-        </div>
+    
+    <!--Routes-->
+    <div class="col-xs-12 col-md-4">
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle routes" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Select Route <span class="caret"></span></button>
+        <ul id="transit_list" class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        </ul>
       </div>
-      
-      <div class="row">
-        <div class="col-xs-4">
-          <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    Direction
-    <span class="caret"></span>
-  </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><a href="#">Inbound</a></li>
-              <li><a href="#">Outbound</a></li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="row">
-          <div class="col-xs-4">
-            <div class="dropdown">
-              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    Stop
-    <span class="caret"></span>
-  </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <li><a href="#">Inbound</a></li>
-                <li><a href="#">Outbound</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+    </div>
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--Direction-->
+    <div class="col-xs-12 col-md-4">
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle disabled" type="button" id="direction-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Select Direction <span class="caret"></span>
+      </button>
+        <ul class="dropdown-menu" id="direction_list" aria-labelledby="direction-dropdown">
+          <li><input type="hidden" name="direction_id" value="1"><a href="#">Inbound</a></li>
+          <li><input type="hidden" name="direction_id" value="0"><a href="#">Outbound</a></li>
+        </ul>
+      </div>
+    </div>
 
-    <div id="map"></div>
+    <!--Stops-->
+    <div class="col-xs-12 col-md-4">
+      <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle disabled" type="button" id="stops-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Select Stop
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" id="stops_list" aria-labelledby="stops-dropdown">
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div id="map"></div>
 
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="{{ site.github.url }}/js/bundle.js"></script>
+  <script type="text/javascript" src="{{ site.github.url }}/js/alert.js"></script>
 </body>
 
 </html>

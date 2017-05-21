@@ -1,8 +1,38 @@
 /* CSS Styles are defined below */
+.logo {
+    margin: 15px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.bell-notify:hover {
+     
+    background-color: green;
+
+}
+.dropdown > button {
+    width: 100%;
+    margin:6px;
+    text-transform: uppercase;
+}
+
+.dropdown ul > li > a {
+    text-transform: uppercase;
+}
+
+.bell-notify {
+    height:3.0rem;
+}
+/*.container-fluid {*/
+/*    display: flex;*/
+/*    justify-content: space-around;*/
+/*}*/
 
 
-
-
+/*.dropdown {*/
+/*    margin: 4px;*/
+/*    display: flex;*/
+/*}*/
 
 
 
@@ -16,49 +46,49 @@
  * Media Queries
  * see: http://getbootstrap.com/css/#grid-options
  **/
-@media screen and (min-width: 320px) {
-    body::before {
-        content: "320px [col-xs]";
-        font-family: Arial, sans-serif;
-        color: green;
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        font-weight: 700;
-        font-size: 1.5rem; /* 13px */
-        z-index: 9999;
-    }
+/*@media screen and (min-width: 320px) {*/
+/*    body::before {*/
+/*        content: "320px [col-xs]";*/
+/*        font-family: Arial, sans-serif;*/
+/*        color: green;*/
+/*        position: fixed;*/
+/*        bottom: 0;*/
+/*        right: 0;*/
+/*        font-weight: 700;*/
+        /*font-size: 1.5rem; */
+/*        z-index: 9999;*/
+/*    }*/
 
-}
+/*}*/
 
-@media screen and (min-width: 640px) {
-    body::before {
-        content: "640px [col-xs]";
-        color: red;
-    }
-}
+/*@media screen and (min-width: 640px) {*/
+/*    body::before {*/
+/*        content: "640px [col-xs]";*/
+/*        color: red;*/
+/*    }*/
+/*}*/
 
-@media screen and (min-width: 768px) {
-    body::before {
-        content: "768px [col-sm]";
-        color: orange;
-    }
+/*@media screen and (min-width: 768px) {*/
+/*    body::before {*/
+/*        content: "768px [col-sm]";*/
+/*        color: orange;*/
+/*    }*/
 
 
-}
+/*}*/
 
-@media screen and (min-width: 992px) {
-    body::before {
-        content: "992px [col-md]";
-        color: black;
-    }
+/*@media screen and (min-width: 992px) {*/
+/*    body::before {*/
+/*        content: "992px [col-md]";*/
+/*        color: black;*/
+/*    }*/
 
-}
+/*}*/
 
-@media screen and (min-width: 1200px) {
-    body::before {
-        content: "1200px [col-lg]";
-        color: red;
-    }
+/*@media screen and (min-width: 1200px) {*/
+/*    body::before {*/
+/*        content: "1200px [col-lg]";*/
+/*        color: red;*/
+/*    }*/
 
-}
+/*}*/
