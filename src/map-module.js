@@ -101,7 +101,7 @@ function drawMap(route_shape, route_id) {
     var layer2 = L.geoJson(route_shape, {
         color: "#F58426",
         weight: 3,
-        opacity: 1
+        opacity: 0.7
     });
     layer2.addTo(map);
 
