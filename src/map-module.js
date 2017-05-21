@@ -71,7 +71,7 @@ function drawMap(route_shape, route_id) {
             var marker = new L.Marker(latlng, {
                 //offset: [-34 / 2, -48 / 2 ],
                 icon: L.icon({
-                    iconUrl: '/images/bus_icon_small.png',
+                    iconUrl: 'https://navarrorc.github.io/bus-alert/images/bus_icon_small.png',
                     iconSize: [34, 48],
                     iconAnchor: [34 / 2, 48], // see: https://www.mapbox.com/mapbox.js/api/v3.0.1/l-icon/
                     popupAnchor: [0, -48]
