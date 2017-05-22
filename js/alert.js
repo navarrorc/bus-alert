@@ -1,5 +1,6 @@
 $(".bell-notify").click(function() {
-    if (confirm('Create an alert?')) {
-        $(this).prev('span.text').remove();
-    }
+    // if (confirm('Create an alert?')) {
+    //     $(this).prev('span.text').remove();
+    // }
+    alert("Feature Coming Soon...");
 });
